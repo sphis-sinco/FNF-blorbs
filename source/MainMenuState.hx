@@ -140,9 +140,10 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0.60 * (60 / FlxG.save.data.fpsCap));
 
-		var versionShit:FlxText = new FlxText(5, FlxG.height, 0, 'Funkin: ' + gameVer, 12);
+		var versionShit:FlxText = new FlxText(5, FlxG.height, 0, 'Blorb: ' + modVer, 12);
 		if (Main.watermarks)
 		{
+			versionShit.text += "\nFunkin: " + gameVer;
 			versionShit.text += "\nKade Engine: " + kadeEngineVer;
 			versionShit.text += "\nIndie Edition: " + indieEditionVer;
 		}

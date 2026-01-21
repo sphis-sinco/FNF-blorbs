@@ -211,6 +211,7 @@ class Debug
 		logInfo('Friday Night Funkin\' version: ${MainMenuState.gameVer}');
 		logInfo('Kade Engine version: ${MainMenuState.kadeEngineVer}');
 		logInfo('Indie Edition version: ${MainMenuState.indieEditionVer}');
+		logInfo('Blorb version: ${MainMenuState.modVer}');
 	}
 
 	/**
