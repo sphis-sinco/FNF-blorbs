@@ -1214,6 +1214,7 @@ class PlayState extends MusicBeatState
 					FlxG.sound.play(Paths.sound('introGo' + altSuffix), 0.6);
 			}
 
+			trace('swagCounter: $swagCounter');
 			swagCounter += 1;
 		}, 4);
 	}
