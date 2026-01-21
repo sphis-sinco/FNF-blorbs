@@ -1,0 +1,70 @@
+name: Build CI
+
+on: [push, pull_request]
+
+jobs:
+  buildWindows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.7
+      - name: compile Windows
+        run: |
+          haxelib --global install hmm
+          haxelib --global run hmm setup
+          haxelib run hmm install
+          haxelib run lime rebuild extension-webm windows
+          haxelib list
+          haxelib run lime build windows
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Windows Build
+          path: export/release/windows/bin
+
+  buildWeb:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.7
+      - name: compile Web
+        run: |
+          haxelib --global install hmm
+          haxelib --global run hmm setup
+          haxelib run hmm install
+          haxelib run lime rebuild extension-webm windows
+          haxelib list
+          haxelib run lime build html5
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: HTML5 Build
+          path: export/release/html5/bin
+
+  buildLinux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: krdlab/setup-haxe@v1
+        with:
+          haxe-version: 4.3.7
+      - name: compile Linux
+        run: |
+          sudo add-apt-repository ppa:haxe/releases -y
+          sudo apt-get update
+          sudo apt-get install gcc-multilib g++-multilib haxe -y
+          haxelib --global install hmm
+          haxelib --global run hmm setup
+          haxelib run hmm install
+          haxelib run lime rebuild extension-webm linux
+          haxelib list
+          haxelib run lime build linux
+          
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Linux Build
+          path: export/release/linux/bin
