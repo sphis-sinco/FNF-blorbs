@@ -4354,6 +4354,9 @@ class PlayState extends MusicBeatState
 			luaModchart.executeState('stepHit', [curStep]);
 		}
 		#end
+
+		trace('curStep: $curStep');
+
 	}
 
 	override function beatHit()
@@ -4371,6 +4374,7 @@ class PlayState extends MusicBeatState
 			luaModchart.executeState('beatHit', [curBeat]);
 		}
 		#end
+		trace('curBeat: $curBeat');
 
 		if (currentSection != null)
 		{
