@@ -1,4 +1,0 @@
-function miscScriptsLoaded()
-{
-    trace('YO WHATUP BEEEEEEEEEAAAAAACCCCCHHHHHHHHH??????????');
-}
