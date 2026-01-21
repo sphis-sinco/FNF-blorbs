@@ -2,9 +2,9 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
-	<app title="Friday Night Funkin'" file="FunkinIndie"
-		packageName="com.macohi.indieedition" package="com.macohi.indieedition" main="Main"
-		version="0.2.0" company="Macohi" />
+	<app title="Friday Night Funkin'" file="Blorbs"
+		packageName="com.macohi.fnfblorbs" package="com.macohi.fnfblorbs" main="Main"
+		version="1.0.0" company="Macohi" />
 
 	<!--Switch
 	Export with Unique ApplicationID and Icon-->

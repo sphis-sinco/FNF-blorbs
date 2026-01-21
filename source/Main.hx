@@ -113,7 +113,7 @@ class Main extends Sprite
 		// Finish up loading debug tools.
 		Debug.onGameStart();
 
-		Application.current.window.title = 'Funkin Indie ${MainMenuState.indieEditionVer}';
+		Application.current.window.title = 'Blorbs ${MainMenuState.modVer}';
 
 		FlxG.signals.preStateCreate.add(function(state:FlxState)
 		{

@@ -37,13 +37,20 @@ class MainMenuState extends MusicBeatState
 
 	public static var firstStart:Bool = true;
 
+	public static var modVer(get, never):String;
+
+	static function get_modVer():String
+	{
+		return Application.current.meta.get('version') + (Global.DEBUG ? '*' : '');
+	}
+
 	public static var indieEditionVer_nightly:String = "";
 
 	public static var indieEditionVer(get, never):String;
 
 	static function get_indieEditionVer():String
 	{
-		return Application.current.meta.get('version') + indieEditionVer_nightly + (Global.DEBUG ? '*' : '');
+		return '0.2.0' + indieEditionVer_nightly;
 	}
 
 	public static var kadeEngineVer:String = '1.8';

@@ -302,20 +302,22 @@ class TitleState extends MusicBeatState
 					returnedData[1] = data.substring(data.indexOf('-'), data.length);
 					if (!Global.DEBUG && !MainMenuState.indieEditionVer.contains(returnedData[0].trim()) && !OutdatedSubState.leftState)
 					{
-						trace('outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.indieEditionVer);
+						trace('ENGINGE : outdated lmao! ' + returnedData[0] + ' != ' + MainMenuState.indieEditionVer);
 						OutdatedSubState.needVer = returnedData[0];
 						OutdatedSubState.currChanges = returnedData[1];
 						OutdatedSubState.justDownloaded = false;
-						FlxG.switchState(() -> new OutdatedSubState());
+						// FlxG.switchState(() -> new OutdatedSubState());
+						FlxG.switchState(() -> new MainMenuState());
 						clean();
 					}
 					else if (!Global.DEBUG && MainMenuState.indieEditionVer != FlxG.save.data.lastVersion)
 					{
-						trace('Oh you dont know... ' + returnedData[0] + ' != ' + MainMenuState.indieEditionVer);
+						trace('ENGINGE : Oh you dont know... ' + returnedData[0] + ' != ' + MainMenuState.indieEditionVer);
 						OutdatedSubState.needVer = returnedData[0];
 						OutdatedSubState.currChanges = returnedData[1];
 						OutdatedSubState.justDownloaded = true;
-						FlxG.switchState(() -> new OutdatedSubState());
+						// FlxG.switchState(() -> new OutdatedSubState());
+						FlxG.switchState(() -> new MainMenuState());
 						clean();
 					}
 					else
