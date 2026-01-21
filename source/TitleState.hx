@@ -311,7 +311,7 @@ class TitleState extends MusicBeatState
 						clean();
 					}
 					else if (!Global.DEBUG && MainMenuState.indieEditionVer != FlxG.save.data.lastVersion)
-					{
+					{  
 						trace('ENGINGE : Oh you dont know... ' + returnedData[0] + ' != ' + MainMenuState.indieEditionVer);
 						OutdatedSubState.needVer = returnedData[0];
 						OutdatedSubState.currChanges = returnedData[1];
