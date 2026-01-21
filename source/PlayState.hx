@@ -863,7 +863,7 @@ class PlayState extends MusicBeatState
 
 		FlxG.fixedTimestep = false;
 
-		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.loadImage('healthBar'));
+		healthBarBG = new FlxSprite(0, FlxG.height * 0.9).loadGraphic(Paths.image('healthBar', 'shared'));
 		if (PlayStateChangeables.useDownscroll)
 			healthBarBG.y = 50;
 		healthBarBG.screenCenter(X);

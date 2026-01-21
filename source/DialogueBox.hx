@@ -130,7 +130,7 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 		skipText = new FlxText(10, 10, Std.int(FlxG.width * 0.6), "", 16);
-		skipText.font = 'assets/fonts/vcr.ttf';
+		skipText.font = Paths.font("vcr.ttf");
 		skipText.color = 0x000000;
 		skipText.text = 'press back to skip';
 		add(skipText);
