@@ -73,6 +73,7 @@ class DialogueBox extends FlxSpriteGroup
 		var hasDialog = false;
 		switch (PlayState.SONG.songId.toLowerCase())
 		{
+			/*
 			case 'senpai':
 				hasDialog = true;
 				box.frames = Paths.getSparrowAtlas('weeb/pixelUI/dialogueBox-pixel');
@@ -95,6 +96,7 @@ class DialogueBox extends FlxSpriteGroup
 				var face:FlxSprite = new FlxSprite(320, 170).loadGraphic(Paths.loadImage('weeb/spiritFaceForward'));
 				face.setGraphicSize(Std.int(face.width * 6));
 				add(face);
+			*/
 		}
 
 		this.dialogueList = dialogueList;
@@ -103,7 +105,7 @@ class DialogueBox extends FlxSpriteGroup
 			return;
 
 		portraitLeft = new FlxSprite(-20, 40);
-		portraitLeft.frames = Paths.getSparrowAtlas('weeb/senpaiPortrait');
+		portraitLeft.frames = Paths.getSparrowAtlas('num1');
 		portraitLeft.animation.addByPrefix('enter', 'Senpai Portrait Enter', 24, false);
 		portraitLeft.setGraphicSize(Std.int(portraitLeft.width * CoolUtil.daPixelZoom * 0.9));
 		portraitLeft.updateHitbox();
@@ -112,7 +114,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.visible = false;
 
 		portraitRight = new FlxSprite(0, 40);
-		portraitRight.frames = Paths.getSparrowAtlas('weeb/bfPortrait');
+		portraitRight.frames = Paths.getSparrowAtlas('num2');
 		portraitRight.animation.addByPrefix('enter', 'Boyfriend portrait enter', 24, false);
 		portraitRight.setGraphicSize(Std.int(portraitRight.width * CoolUtil.daPixelZoom * 0.9));
 		portraitRight.updateHitbox();
@@ -128,12 +130,12 @@ class DialogueBox extends FlxSpriteGroup
 		box.screenCenter(X);
 		portraitLeft.screenCenter(X);
 		skipText = new FlxText(10, 10, Std.int(FlxG.width * 0.6), "", 16);
-		skipText.font = 'Pixel Arial 11 Bold';
+		skipText.font = 'assets/fonts/vcr.ttf';
 		skipText.color = 0x000000;
 		skipText.text = 'press back to skip';
 		add(skipText);
-		handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.loadImage('weeb/pixelUI/hand_textbox'));
-		add(handSelect);
+		// handSelect = new FlxSprite(FlxG.width * 0.9, FlxG.height * 0.9).loadGraphic(Paths.loadImage('weeb/pixelUI/hand_textbox'));
+		// add(handSelect);
 
 		if (!talkingRight)
 		{
